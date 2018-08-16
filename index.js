@@ -5,7 +5,7 @@ app.set("port", process.env.PORT || 5000);
 
 // Our first route
 app.get("/", function(req, res) {
-  res.send(path("./index.html"));
+  res.sendfile(Path("./index.html"));
 });
 
 // Listen to port
