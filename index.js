@@ -6,7 +6,7 @@ app.set("port", process.env.PORT || 5000);
 
 // Our first route
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "/game.html"));
+  res.sendFile(path.join(__dirname, "/index.html"));
 });
 
 // Listen to port
