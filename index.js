@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
 
-app.get('/Dev', (req, res, next) => {
+app.get('/Dev', (req, res) => {
   pg.connect(
     connectionString,
     (err, client, done) => {
@@ -23,7 +23,6 @@ app.get('/Dev', (req, res, next) => {
         res.status(400).send(err);
       }
       client.query('SELECT * FROM Dev where id = $1', [1], (
-        err,
         result,
       ) => {
         done(); // closing the connection;
